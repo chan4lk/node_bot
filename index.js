@@ -21,7 +21,7 @@ var connector = new builder.ChatConnector({
 });
 server.post('/api/messages', connector.listen());
 
-var instructions = 'Welcome to Vortex Faq Bot.' +
+var instructions = 'Welcome to Vortex Faq Bot.\n' +
     'Ask questions from view faq section. Any other message will be echoed.';
 
 var bot = new builder.UniversalBot(connector, function (session) {
