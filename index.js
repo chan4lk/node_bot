@@ -3,13 +3,14 @@ require('dotenv-extended').load();
 
 var builder = require('botbuilder');
 var restify = require('restify');
+const {
+    getAnswer
+} = require('./faqs');
 
 // Setup Restify Server
 var server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, function () {
     console.log('%s listening to %s', server.name, server.url);
-    console.log('app id', process.env.MICROSOFT_APP_ID);
-    console.log('app password', process.env.MICROSOFT_APP_PASSWORD);
 });
 
 
@@ -20,7 +21,8 @@ var connector = new builder.ChatConnector({
 });
 server.post('/api/messages', connector.listen());
 
-var instructions = 'Welcome to the Bot to showcase the DirectLine API. Send \'Show me a hero card\' or \'Send me a BotFramework image\' to see how the DirectLine client supports custom channel data. Any other message will be echoed.';
+var instructions = 'Welcome to Vortex Faq Bot.' +
+    'Send \'Show me a hero card\' or \'Send me a BotFramework image\' to see how the DirectLine client supports custom channel data. Any other message will be echoed.';
 
 var bot = new builder.UniversalBot(connector, function (session) {
 
@@ -47,7 +49,7 @@ var bot = new builder.UniversalBot(connector, function (session) {
             break;
 
         default:
-            reply.text('You said \'' + session.message.text + '\'');
+            reply.text(getAnswer(session.message.text));
             break;
     }
 
