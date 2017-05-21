@@ -22,7 +22,7 @@ var connector = new builder.ChatConnector({
 server.post('/api/messages', connector.listen());
 
 var instructions = 'Welcome to Vortex Faq Bot.' +
-    'Send \'Show me a hero card\' or \'Send me a BotFramework image\' to see how the DirectLine client supports custom channel data. Any other message will be echoed.';
+    'Ask questions from view faq section. Any other message will be echoed.';
 
 var bot = new builder.UniversalBot(connector, function (session) {
 
