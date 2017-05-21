@@ -9,6 +9,10 @@ const faqs = [{
     {
         answer: 'Write your password on a paper and give it the admin. They will reset it for you.',
         questions: ['How to reset the password'],
+    },
+     {
+        answer: 'Hello I\'m vortex bot. Nice to meet you',
+        questions: ['Hi', 'Hello'],
     }
 ];
 
