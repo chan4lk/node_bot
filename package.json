@@ -12,12 +12,11 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "botbuilder": "^3.8.3",
+    "botbuilder": "^3.9.1",
     "chalk": "^1.1.1",
     "dotenv-extended": "^2.0.0",
     "q": "^1.4.1",
     "request": "^2.67.0",
-    "restify": "^4.3.0",
-    "sprintf-js": "^1.1.1"
+    "restify": "^4.3.0"    
   }
 }
